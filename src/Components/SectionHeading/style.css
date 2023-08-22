@@ -1,0 +1,147 @@
+.section-heading {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.section-heading .section-title-wrapper {
+  align-items: flex-start;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.section-heading .section-title {
+  color: var(--text-gray-900);
+  font-family: var(--heading-h2-font-family);
+  font-size: var(--heading-h2-font-size);
+  font-style: var(--heading-h2-font-style);
+  font-weight: var(--heading-h2-font-weight);
+  letter-spacing: var(--heading-h2-letter-spacing);
+  line-height: var(--heading-h2-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.section-heading .description {
+  align-self: stretch;
+  color: var(--text-gray-900);
+  font-family: var(--lead-lead-1-font-family);
+  font-size: var(--lead-lead-1-font-size);
+  font-style: var(--lead-lead-1-font-style);
+  font-weight: var(--lead-lead-1-font-weight);
+  letter-spacing: var(--lead-lead-1-letter-spacing);
+  line-height: var(--lead-lead-1-line-height);
+  position: relative;
+}
+
+.section-heading .section-title-2 {
+  color: var(--text-gray-900);
+  font-family: var(--heading-h2-font-family);
+  font-size: var(--heading-h2-font-size);
+  font-style: var(--heading-h2-font-style);
+  font-weight: var(--heading-h2-font-weight);
+  letter-spacing: var(--heading-h2-letter-spacing);
+  line-height: var(--heading-h2-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.section-heading.title {
+  display: inline-flex;
+}
+
+.section-heading.title-description.five-col {
+  display: flex;
+  width: 445px;
+}
+
+.section-heading.title-description.six-col {
+  display: flex;
+  width: 540px;
+}
+
+.section-heading.title-description.left-align {
+  display: flex;
+}
+
+.section-heading.center-align.twelve-col {
+  display: inline-flex;
+}
+
+.section-heading.title-description.eight-col {
+  display: flex;
+  width: 730px;
+}
+
+.section-heading.title-description.twelve-col.left-align {
+  width: 1110px;
+}
+
+.section-heading.twelve-col .section-title-wrapper {
+  display: inline-flex;
+}
+
+.section-heading.six-col .section-title-wrapper {
+  display: inline-flex;
+}
+
+.section-heading.center-align .section-title-wrapper {
+  display: inline-flex;
+}
+
+.section-heading.eight-col .section-title-wrapper {
+  display: inline-flex;
+}
+
+.section-heading.five-col.left-align .section-title-wrapper {
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+}
+
+.section-heading.twelve-col .section-title {
+  width: 1110px;
+}
+
+.section-heading.six-col .section-title {
+  width: 540px;
+}
+
+.section-heading.center-align .section-title {
+  text-align: center;
+}
+
+.section-heading.five-col .section-title {
+  width: 445px;
+}
+
+.section-heading.eight-col .section-title {
+  width: 730px;
+}
+
+.section-heading.center-align .description {
+  text-align: center;
+}
+
+.section-heading.twelve-col .section-title-2 {
+  width: 1110px;
+}
+
+.section-heading.six-col .section-title-2 {
+  width: 540px;
+}
+
+.section-heading.center-align .section-title-2 {
+  text-align: center;
+}
+
+.section-heading.five-col .section-title-2 {
+  width: 445px;
+}
+
+.section-heading.eight-col .section-title-2 {
+  width: 730px;
+}

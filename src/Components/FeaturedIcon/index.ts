@@ -1,0 +1,1 @@
+export { FeaturedIcon } from "./FeaturedIcon";

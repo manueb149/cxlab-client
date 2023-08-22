@@ -1,0 +1,1 @@
+export { DownloadBadgeApp } from "./DownloadBadgeApp";
