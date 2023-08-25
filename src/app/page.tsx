@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 export default function Index() {
   return (
     <>
-      <NoSSR><Home /></NoSSR>
+      <NoSSR>
+        <Home />
+      </NoSSR>
     </>
 
   )

@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "cxlab.lat",
+  "Id": "d50e6753-a020-405e-af55-b8e5af3e8083"
+}
