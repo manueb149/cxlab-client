@@ -1,1 +1,0 @@
-export { DownloadBadge } from "./DownloadBadge";

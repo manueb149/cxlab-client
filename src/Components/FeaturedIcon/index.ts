@@ -1,1 +1,0 @@
-export { FeaturedIcon } from "./FeaturedIcon";

@@ -1,1 +1,0 @@
-export { HelpIcon } from "./HelpIcon";

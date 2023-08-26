@@ -14,8 +14,14 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      boxShadow: {
+        'cxlab': '0px 0px 15px 1px #ea642b',
+      },
+      colors: {
+        'cxlab-ud': 'radial-gradient(25% 33% at 50% 46%, rgb(0 0 0 / 60%) 0%, rgb(8 5 0 / 40%) 200%)'
+      }
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }
 export default config
