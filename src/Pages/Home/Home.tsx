@@ -112,8 +112,8 @@ const Home = (): JSX.Element => {
   const { currectSolution } = useStore();
 
   return (
-    <main id="home" className="">
-      <div id="home-intro" className=" bg-gradient-to-br to-orange-100 from-cyan-50 via-orange-200 relative top-0 h-screen pt-14 pb-10 px-5 lg:px-[5vw] lg:pb-32 lg:pt-18 flex flex-col items-center justify-center">
+    <main id="home" className="relative">
+      <div id="home-intro" className="bg-gradient-to-br to-orange-100 from-cyan-50 via-orange-200 h-full xl:h-screen pt-14 pb-10 px-5 lg:px-[5vw] flex flex-col items-center justify-center">
         <h2 className="font-bold text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r to-orange-900 from-cyan-500 via-orange-500 bg-clip-text text-transparent">
           Empower Customer Experience with Omnichannel Tools
         </h2>
