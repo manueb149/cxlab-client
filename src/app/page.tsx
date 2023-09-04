@@ -1,4 +1,5 @@
-import UnderDevelopment from "@/Components/UnderDevelopment";
+import LayoutWrapper from "@/Layout";
+import Home from "@/Pages/Home/Home";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,9 +8,10 @@ export const metadata: Metadata = {
 }
 
 export default function Index() {
+
   return (
-    <>
-      
-    </>
+    <LayoutWrapper>
+      <Home />
+    </LayoutWrapper>
   )
 }

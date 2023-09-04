@@ -1,3 +1,4 @@
+import LayoutWrapper from "@/Layout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <>
+    <LayoutWrapper>
       Blogs
-    </>
+    </LayoutWrapper>
   )
 }

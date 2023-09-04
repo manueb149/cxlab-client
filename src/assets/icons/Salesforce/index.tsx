@@ -1,26 +1,18 @@
 import Image from "next/image";
 import React from "react";
-import Icon from "./zoom-icon.svg";
-import Zoom from "./zoom.svg"
+import Salesforce from ".//salesforce.svg";
 import classNames from "@/utils/classNames";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLImageElement> {
   width?: number | `${number}` | undefined;
   height?: number | `${number}` | undefined;
-  className?: string;
 }
 
-export const ZoomIcon = ({ width, height }: Props): JSX.Element => {
-  return (
-    <Image src={Icon} alt="zoom-icon" height={height || 30} width={width || 30} priority/>
-  );
-};
-
-export const ZoomLogo = ({ width, height, className }: Props) => {
+export const SalesforceLogo = ({ width, height, className }: Props) => {
   return (
     <Image
       className={classNames("h-auto inline-block", `${(width || height) ? "" : "object-fill"}`, className || "")} 
-      src={Zoom} alt="ZoomLogo" 
+      src={Salesforce} alt="SalesforceLogo" 
       width={width ?? 50} 
       priority 
     />

@@ -9,6 +9,6 @@ interface Props {
 
 export const WifiIcon = ({ width, height }: Props): JSX.Element => {
   return (
-    <Image src={Icon} alt="cc-icon" height={height || 30} width={width || 30} priority/>
+    <Image src={Icon} alt="WifiIcon" height={height || 30} width={width || 30} priority/>
   );
 };

@@ -13,7 +13,7 @@ export const RightArrowIcon = ({ width, height, color }: Props): JSX.Element => 
   return (
     <Image
       src={color === 'green' ? IconGreen : IconBlue}
-      alt="cc-icon"
+      alt="ArrowIcon"
       height={height || 30}
       width={width || 30}
     />

@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "allround";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../assets/fonts/AllRoundGothic-Bold.ttf");
+}
+
+@font-face {
+  font-family: "allround";
+  font-weight: bold;
+  font-style: italic;
+  src: url("../assets/fonts/AllRoundGothic-BoldOblique.ttf");
+}
+
+@font-face {
+  font-family: "allround";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../assets/fonts/AllRoundGothic-Book.ttf");
+}
+
+@font-face {
+  font-family: "allround";
+  font-weight: normal;
+  font-style: italic;
+  src: url("../assets/fonts/AllRoundGothic-BookOblique.ttf");
+}
+
+@font-face {
+  font-family: "allround";
+  font-weight: lighter;
+  font-style: normal;
+  src: url("../assets/fonts/AllRoundGothic-Medium.ttf");
+}
+
+@font-face {
+  font-family: "allround";
+  font-weight: lighter;
+  font-style: italic;
+  src: url("../assets/fonts/AllRoundGothic-MediumOblique.ttf");
+}

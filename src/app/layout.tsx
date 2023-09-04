@@ -1,5 +1,3 @@
-import LayoutWrapper from '@/Layout'
-
 import './globals.css'
 
 export default function RootLayout({
@@ -8,11 +6,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className="h-full">
-      <body className="h-full">
-        <LayoutWrapper devMode>
-          {children}
-        </LayoutWrapper>
+    <html>
+      <body>
+        {children}
       </body>
     </html>
   )

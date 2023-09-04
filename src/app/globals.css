@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 @import "../styles/styleguide.css";
+@import "../styles/fonts.css";
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: allround, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: var(--basewhite);
 }
