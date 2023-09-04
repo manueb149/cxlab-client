@@ -8,7 +8,7 @@ interface Props {
 
 const Footer = ({ children }: Props) => {
   return (
-    <footer className="footer p-10 pt-[100px] bg-base-200">
+    <footer className="footer p-10 bg-base-200">
       <div className="h-full flex flex-col justify-center">
         <LogoDarkIcon width={180} />
         <p className=" w-4/6 text-center">Providing reliable tech beyond your imaginations</p>

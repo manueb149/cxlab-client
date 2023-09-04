@@ -13,6 +13,7 @@ import { SalesforceLogo } from "@/assets/icons/Salesforce";
 import { ZooxLogo } from "@/assets/icons/Zoox";
 
 import "./Home.styles.css";
+import Button from "@/Components/Buttons";
 
 const Home = (): JSX.Element => {
   const products = [
@@ -111,18 +112,21 @@ const Home = (): JSX.Element => {
   const { currectSolution } = useStore();
 
   return (
-    <main id="home" className="py-10">
-      <div id="home-intro" className="pt-14 pb-10 px-5 lg:px-[5vw] lg:pb-32 lg:pt-28 flex flex-col items-center">
-        <h2 className="font-bold text-3xl text-center lg:text-6xl bg-gradient-to-r to-orange-900 from-cyan-500 via-orange-500 bg-clip-text text-transparent">
+    <main id="home" className="">
+      <div id="home-intro" className=" bg-gradient-to-br to-orange-100 from-cyan-50 via-orange-200 relative top-0 h-screen pt-14 pb-10 px-5 lg:px-[5vw] lg:pb-32 lg:pt-18 flex flex-col items-center justify-center">
+        <h2 className="font-bold text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r to-orange-900 from-cyan-500 via-orange-500 bg-clip-text text-transparent">
           Empower Customer Experience with Omnichannel Tools
         </h2>
-        <p className="text-center text-md lg:text-lg text-gray-800 py-4 lg:px-32">
+        <p className="text-center text-md lg:text-lg xl:text-2xl text-gray-800 py-4 lg:px-32">
           We transform interactions into profitable investments
           through experiences that last in the mind of your customer.
         </p>
         <div>
           <AnimatedCX />
         </div>
+        <Button className="mt-10 h-20 text-xl">
+          Schedule an appointment
+        </Button>
       </div>
       <div id="home-solutions" className="px-5 lg:px-[5vw] bg-gradient-to-b from-white via-[#ed602939] to-white">
         <div className="flex w-full gap-20 items-start" ref={ref}>
@@ -170,7 +174,7 @@ const Home = (): JSX.Element => {
         </div>
       </div>
 
-      <div id="home-wwd" className="px-5 lg:px-[5vw] lg:h-[80vh] 2xl:h-[50vh] flex flex-col items-center justify-center">
+      <div id="home-wwd" className="px-5 py-10 lg:px-[5vw] lg:h-[80vh] 2xl:h-[50vh] flex flex-col items-center justify-center">
         <div className="wwd-header flex flex-col justify-center items-center">
           <h3>What we do?</h3>
           <h2 className="uppercase my-6 bg-gradient-conic to-orange-900 from-cyan-900 via-orange-600 bg-clip-text text-transparent md:text-lg lg:text-3xl">We increase ROI</h2>
@@ -190,8 +194,8 @@ const Home = (): JSX.Element => {
         </div>
       </div>
 
-      <div ref={refContact} id="home-contact" className="px-0 lg:px-[5vw] relative h-[100%] bg-zinc-50 p-10 grid place-content-center rounded-full">
-        <span className="text-xl text-black">Do you want to increase contact with your customers? <span className="text-orange-600 text-2xl underline underline-offset-1 hover:cursor-pointer">{"Let's talk!"}</span></span>
+      <div ref={refContact} id="home-contact" className="px-0 lg:px-[5vw] relative h-[12vh] bg-orange-500 p-10 grid place-content-center">
+        <span className="text-3xl lg:text-4xl text-black text-center">Do you want to increase contact with your customers? <span className="text-white underline underline-offset-1 hover:cursor-pointer">{"Let's talk!"}</span></span>
       </div>
     </main>
   );

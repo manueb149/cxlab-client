@@ -37,7 +37,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white sticky">
+    <header className="bg-white sticky top-0 z-10 border-b-2 border-slate-100">
       <nav className="mx-auto w-full flex items-center justify-between p-5 lg:px-8" aria-label="Global">
         <div className="flex lg:justify-start">
           <a href="/" className="-m-1.5 p-1.5 tab-i" tabIndex={0}>
@@ -145,7 +145,7 @@ const Header = () => {
             Contact Sales
           </a>
         </Popover.Group>
-        <GetQuoteButton />
+        <GetQuoteButton className='h-12 px-8' />
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
