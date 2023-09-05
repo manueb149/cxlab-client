@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        {children}
+        {children || null}
       </body>
     </html>
   )

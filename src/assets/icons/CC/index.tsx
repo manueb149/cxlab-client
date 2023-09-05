@@ -1,14 +1,20 @@
 import Image from "next/image";
 import React from "react";
 import Icon from "./cc-icon.svg";
+import classNames from "@/utils/classNames";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLImageElement> {
   width?: number | `${number}` | undefined;
   height?: number | `${number}` | undefined;
 }
 
-export const CCIcon = ({ width, height }: Props): JSX.Element => {
+export const CCIcon = ({ width, height, className }: Props) => {
   return (
-    <Image src={Icon} alt="cc-icon" height={height || 30} width={width || 30} priority />
+    <Image
+      className={classNames("h-auto inline-block", `${(width || height) ? "" : "object-fill"}`, className || "")} 
+      src={Icon} alt="CCIcon" 
+      width={width ?? 50} 
+      priority 
+    />
   );
 };

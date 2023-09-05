@@ -1,5 +1,5 @@
 "use client"
-import { Fragment, useState } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -15,6 +15,7 @@ import { InformationCircleIcon } from '@heroicons/react/24/solid'
 import { RightArrowIcon } from '@/assets/icons/RightArrow'
 import GetQuoteButton from '@/Components/GetQuoteButton'
 import classNames from '@/utils/classNames'
+import { useHover } from '@uidotdev/usehooks'
 
 const products = [
   { name: 'Five9 - Contact Center', description: 'Simple and secure', href: '#', icon: CCIcon, cta: false },
@@ -24,8 +25,8 @@ const products = [
 ]
 
 const links = [
-  { name: 'Webinars', href: 'webinars', icon: <RightArrowIcon color='blue' width={15} />, cta: false },
-  { name: 'Blogs', href: 'blogs', icon: <RightArrowIcon color='green' width={15} />, cta: false }
+  { name: 'Webinars', href: 'webinars', icon: <RightArrowIcon variant='blue' width={15} />, cta: false },
+  { name: 'Blogs', href: 'blogs', icon: <RightArrowIcon variant='green' width={15} />, cta: false }
 ]
 
 const callsToAction = [
@@ -33,8 +34,17 @@ const callsToAction = [
   { name: 'More info', href: '#', icon: InformationCircleIcon, cta: true },
 ]
 
+const Div = ({ children }: React.PropsWithChildren) => {
+  return <div>{children}</div>
+}
+
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMouseLeaveMenu = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, close: () => void) => {
+    if ((event.relatedTarget as HTMLButtonElement).localName === 'button') return
+    close();
+  }
 
   return (
     <header className="bg-white sticky h-[60px] lg:h-[80px] top-0 left-0 right-0 flex z-10 border-b-2 border-zinc-200">
@@ -57,7 +67,7 @@ const Header = () => {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            {({ open }) => (
+            {({ open, close }) => (
               <>
                 <Popover.Button className={`flex items-center gap-x-1 text-sm md:text-base lg:text-lg font-semibold leading-6 ${open ? 'text-orange-700' : 'text-gray-900'} focus:outline-none transition-all`}>
                   Solutions
@@ -65,7 +75,7 @@ const Header = () => {
                 </Popover.Button>
 
                 <Transition
-                  as={Fragment}
+                  //as={Fragment}
                   enter="transition ease-out duration-200"
                   enterFrom="opacity-0 -translate-y-10"
                   enterTo="opacity-100 translate-y-0"
@@ -73,63 +83,66 @@ const Header = () => {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-10"
                 >
-                  <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-2xl  overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                    <div className="p-3">
-                      <div className="m-0 p-0 flex">
-                        <div className="flex-auto">
-                          <h6 className="pb-4 pt-4 pl-5 text-gray-400 font-bold">Explore</h6>
-                          {products.map((item) => (
-                            <div
-                              key={item.name}
-                              className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-100"
-                            >
-                              <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                <div className="h-6 w-6 text-gray-600" aria-hidden="true">{<item.icon />}</div>
-                              </div>
-                              <div className="flex-auto">
-                                <a href={item.href} className="block font-semibold text-gray-900">
-                                  {item.name}
-                                  <span className="absolute inset-0" />
-                                </a>
-                                <p className="mt-1 text-gray-600">{item.description}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="flex-1">
-                          <h6 className="pb-4 pt-4 pl-5 text-gray-400 font-bold">Useful links</h6>
-                          {links.map((item) => (
-                            <div
-                              key={item.name}
-                              className="group relative rounded-lg px-4 mb-2 text-sm leading-6"
-                            >
-                              <div className="w-15 h-11 p-3 flex flex-nowrap flex-none items-center justify-start rounded-lg hover:bg-gray-100">
-                                <div className="h-6 w-6 text-gray-60" aria-hidden="true">
-                                  {item.icon}
+                  {open
+                    ?
+                    (<Popover.Panel onMouseLeave={(e) => { handleMouseLeaveMenu(e, close) }} className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-2xl  overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                      <div className="p-3">
+                        <div className="m-0 p-0 flex">
+                          <div className="flex-auto">
+                            <h6 className="pb-4 pt-4 pl-5 text-gray-400 font-bold">Explore</h6>
+                            {products.map((item) => (
+                              <div
+                                key={item.name}
+                                className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-100"
+                              >
+                                <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                  <div className="h-6 w-6 text-gray-600" aria-hidden="true">{<item.icon />}</div>
                                 </div>
-                                <a href={item.href} className="block font-semibold text-gray-900">
-                                  {item.name}
-                                  <span className="absolute inset-0" />
-                                </a>
+                                <div className="flex-auto">
+                                  <a href={item.href} className="block font-semibold text-gray-900">
+                                    {item.name}
+                                    <span className="absolute inset-0" />
+                                  </a>
+                                  <p className="mt-1 text-gray-600">{item.description}</p>
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
+                          <div className="flex-1">
+                            <h6 className="pb-4 pt-4 pl-5 text-gray-400 font-bold">Useful links</h6>
+                            {links.map((item) => (
+                              <div
+                                key={item.name}
+                                className="group relative rounded-lg px-4 mb-2 text-sm leading-6"
+                              >
+                                <div className="w-15 h-11 p-3 flex flex-nowrap flex-none items-center justify-start rounded-lg hover:bg-gray-100">
+                                  <div className="h-6 w-6 text-gray-60" aria-hidden="true">
+                                    {item.icon}
+                                  </div>
+                                  <a href={item.href} className="block font-semibold text-gray-900">
+                                    {item.name}
+                                    <span className="absolute inset-0" />
+                                  </a>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                      {callsToAction.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 group hover:bg-gray-100"
-                        >
-                          <item.icon className="group-hover:text-orange-600 h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                          {item.name}
-                        </a>
-                      ))}
-                    </div>
-                  </Popover.Panel>
+                      <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                        {callsToAction.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 group hover:bg-gray-100"
+                          >
+                            <item.icon className="group-hover:text-orange-600 h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    </Popover.Panel>)
+                    : null}
                 </Transition>
               </>
             )}

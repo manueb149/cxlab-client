@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { AnimatedCX } from "@/assets/animations/AnimatedCX";
 import { SolutionTitle } from "@/Components/Cards";
 import { ZoomLogo } from "@/assets/icons/Zoom";
@@ -14,6 +14,7 @@ import { ZooxLogo } from "@/assets/icons/Zoox";
 
 import "./Home.styles.css";
 import Button from "@/Components/Buttons";
+import { RightArrowIcon } from "@/assets/icons/RightArrow";
 
 const Home = (): JSX.Element => {
   const products = [
@@ -107,13 +108,16 @@ const Home = (): JSX.Element => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 50%', 'start start'] });
 
   const refContact = useRef(null);
-  const { scrollYProgress: scrollYContact } = useScroll({ target: refContact, offset: ['end end', 'end 50%'] });
+  const { scrollYProgress: scrollYContact } = useScroll({ target: refContact, offset: ['start end', 'end end'] });
+  const yContact = useTransform(scrollYContact, [0,1], ["100%", "0%"]);
 
   const { currectSolution } = useStore();
 
   return (
     <main id="home" className="relative">
-      <div id="home-intro" className="bg-gradient-to-br to-orange-100 from-cyan-50 via-orange-200 h-full xl:h-screen pt-14 pb-10 px-5 lg:px-[5vw] flex flex-col items-center justify-center">
+
+      {/* INTRO SECTION */}
+      <section id="home-intro" className="bg-gradient-to-br to-orange-100 from-cyan-50 via-orange-200 h-full 2xl:h-screen pt-14 pb-10 px-5 lg:px-[5vw] flex flex-col items-center justify-center">
         <h2 className="font-bold text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r to-orange-900 from-cyan-500 via-orange-500 bg-clip-text text-transparent">
           Empower Customer Experience with Omnichannel Tools
         </h2>
@@ -127,8 +131,10 @@ const Home = (): JSX.Element => {
         <Button className="mt-10 h-20 text-xl">
           Schedule an appointment
         </Button>
-      </div>
-      <div id="home-solutions" className="px-5 lg:px-[5vw] bg-gradient-to-b from-white via-[#ed602939] to-white">
+      </section>
+
+      {/* SOLUTIONS SECTION */}
+      <section id="home-solutions" className="px-5 lg:px-[5vw] bg-gradient-to-b from-white via-[#ed602939] to-white">
         <div className="flex w-full gap-20 items-start" ref={ref}>
           <div className="w-full py-[45vh]">
             <ul className="flex flex-col gap-[50vh]">
@@ -172,31 +178,39 @@ const Home = (): JSX.Element => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="home-wwd" className="px-5 py-10 lg:px-[5vw] lg:h-[80vh] 2xl:h-[50vh] flex flex-col items-center justify-center">
+      {/* WHAT WE DO SECTION */}
+      <section id="home-wwd" className="px-5 my-[10rem] lg:px-[5vw] xl:h-[80vh] 2xl:h-[50vh] flex flex-col items-center justify-center">
         <div className="wwd-header flex flex-col justify-center items-center">
           <h3>What we do?</h3>
           <h2 className="uppercase my-6 bg-gradient-conic to-orange-900 from-cyan-900 via-orange-600 bg-clip-text text-transparent md:text-lg lg:text-3xl">We increase ROI</h2>
           <p className="pb-8 text-justify text-gray-600 md:text-md lg:text-xl">Through a precise blend of technology and strategy, we work to enhance operational efficiency and elevate customer satisfaction. By optimizing every touchpoint and delivering more meaningful experiences, we generate measurable results.</p>
         </div>
-        <div className="services w-full flex flex-wrap gap-5 justify-center">
+        <div className="services w-full flex flex-wrap xl:flex-nowrap gap-5 justify-center">
           {services.map(({ name, tasks }) => (
-            <div key={name} className="service p-3 min-w-full md:min-w-[300px] h-auto rounded-md bg-slate-200 border-2 border-[#b450212e]">
-              <div className="name font-bold text-gray-700">{name}</div>
+            <div key={name} className="service py-16 px-5 w-full md:w-80 lg:min-w-[100] h-auto rounded-md bg-slate-200 border-2 border-[#b450212e]">
+              <div className="name pb-5 uppercase font-bold bg-gradient-to-r from-orange-900 to-orange-500 bg-clip-text text-transparent text-xl">{name}</div>
               <ul>
                 {tasks.map((tasks, idx) => (
-                  <li key={idx} className="whitespace-nowrap italic text-gray-500">{"- "}{tasks}</li>
+                  <li key={idx} className="italic font-[500] text-gray-500"><RightArrowIcon className="mr-2" width={10} />{tasks}</li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div ref={refContact} id="home-contact" className="px-0 lg:px-[5vw] relative h-[12vh] bg-orange-500 p-10 grid place-content-center">
-        <span className="text-3xl lg:text-4xl text-black text-center">Do you want to increase contact with your customers? <span className="text-white underline underline-offset-1 hover:cursor-pointer">{"Let's talk!"}</span></span>
-      </div>
+      {/* CONTACT SECTION */}
+      <motion.div
+        style={{
+          translateY: yContact
+        }}
+      >
+        <section ref={refContact} id="home-contact" className="px-5 md:px-[5vw] relative h-[20vh] bg-orange-500 p-10 grid place-content-center">
+          <span className="text-2xl md:text-3xl lg:text-4xl text-black text-center font-bold">Do you want to increase contact with your customers? <span className="text-white underline underline-offset-1 hover:cursor-pointer">{"Let's talk!"}</span></span>
+        </section>
+      </motion.div>
     </main>
   );
 };
