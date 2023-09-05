@@ -135,8 +135,8 @@ const Home = (): JSX.Element => {
 
       {/* SOLUTIONS SECTION */}
       <section id="home-solutions" className="px-5 lg:px-[5vw] bg-gradient-to-b from-white via-[#ed602939] to-white">
-        <div className="flex w-full gap-20 items-start" ref={ref}>
-          <div className="w-full py-[45vh]">
+        <div className="relative flex w-full gap-20 items-start" ref={ref}>
+          <div className="w-full py-[45vh] max-md:invisible max-md:w-0">
             <ul className="flex flex-col gap-[50vh]">
               {products.map(({ name }, idx) => (
                 <li key={idx}>
@@ -163,7 +163,7 @@ const Home = (): JSX.Element => {
                     currectSolution === name ? 'opacity-100' : 'opacity-0 hidden'
                   )}
                 >
-                  <h2 className="relative -top-[0px] left-0 right-0 text-neutral-800 text-center text-xl md:text-3xl">Solutions</h2>
+                  <h2 className="relative -top-[0px] left-0 right-0 bg-gradient-conic to-orange-900 from-cyan-900 via-orange-600 bg-clip-text text-transparent font-bold text-center text-xl md:text-3xl">Solutions</h2>
                   <div className="card bg-white dark:bg-neutral-800 dark:text-white shadow-2xl">
                     <div className="card-body gap-10 min-h-[50vh] flex justify-center items-center">
                       <div className="flex min-h-20 w-auto flex-none items-center justify-center rounded-lg group-hover:bg-gray-50">
@@ -177,6 +177,7 @@ const Home = (): JSX.Element => {
               ))}
             </motion.div>
           </div>
+          <div className="invisible max-md:visible"></div>
         </div>
       </section>
 
@@ -184,7 +185,7 @@ const Home = (): JSX.Element => {
       <section id="home-wwd" className="px-5 my-[10rem] lg:px-[5vw] xl:h-[80vh] 2xl:h-[50vh] flex flex-col items-center justify-center">
         <div className="wwd-header flex flex-col justify-center items-center">
           <h3>What we do?</h3>
-          <h2 className="uppercase my-6 bg-gradient-conic to-orange-900 from-cyan-900 via-orange-600 bg-clip-text text-transparent md:text-lg lg:text-3xl">We increase ROI</h2>
+          <h2 className="uppercase my-6 font-bold bg-gradient-conic to-orange-900 from-cyan-900 via-orange-600 bg-clip-text text-transparent md:text-lg lg:text-3xl">We increase ROI</h2>
           <p className="pb-8 text-justify text-gray-600 md:text-md lg:text-xl">Through a precise blend of technology and strategy, we work to enhance operational efficiency and elevate customer satisfaction. By optimizing every touchpoint and delivering more meaningful experiences, we generate measurable results.</p>
         </div>
         <div className="services w-full flex flex-wrap xl:flex-nowrap gap-5 justify-center">
