@@ -1,14 +1,16 @@
+"use client"
+
 import { LogoMark } from "@/assets/icons/Logo";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <main className="grid h-screen place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
         <div className="flex justify-center items-start gap-1 text-base font-semibold text-orange-600 w-full">
           <span className="text-6xl">4</span>
-          <span className="inline-block" style={{ paddingTop: '0.3rem' }}>
-            <LogoMark width={45} />
+          <span className="inline-block" style={{ paddingTop: '0.4rem' }}>
+            <LogoMark />
           </span>
           <span className="text-6xl">4</span>
         </div>

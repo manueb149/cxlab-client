@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper devMode>
       Webinars
     </LayoutWrapper>
   )

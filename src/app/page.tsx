@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Index() {
 
   return (
-    <LayoutWrapper>
+    <LayoutWrapper devMode>
       <Home />
     </LayoutWrapper>
   )

@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 const UnderDevelopment = ({ children }: React.PropsWithChildren) => {
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center bg-neutral-100 gap-2">
-      <motion.div className="w-1/4 lg:w-1/5 xl:w-1/6"
+    <div className="h-screen w-full flex flex-col items-center justify-center bg-neutral-100 gap-2">
+      <motion.div
         animate={{
           opacity: [0, 1, 1, 0],
           scale: [0, 1, 1, 0],
@@ -23,7 +23,7 @@ const UnderDevelopment = ({ children }: React.PropsWithChildren) => {
       {children}
       <div className="">
         <motion.p 
-          className="uppercase font-mono font-bold text-sm text-center px-1 py-5 text-"
+          className="uppercase font-mono font-bold text-sm text-center px-1 py-5"
           animate={{
             color: ['#a6adba', '#ea642b', '#a6adba']
           }}
