@@ -1,6 +1,6 @@
-
-import { LogoDarkIcon } from "@/assets/icons/Logo/LogoDarkIcon";
+"use client"
 import React from "react"
+import { LogoDarkIcon } from "@/assets/icons/Logo/LogoDarkIcon";
 
 interface Props {
   children?: React.ReactNode;

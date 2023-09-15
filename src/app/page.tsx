@@ -1,3 +1,4 @@
+import NoSSR from "@/Components/NoSSR";
 import LayoutWrapper from "@/Layout";
 import Home from "@/Pages/Home/Home";
 import { Metadata } from "next";
@@ -10,8 +11,10 @@ export const metadata: Metadata = {
 export default function Index() {
 
   return (
-    <LayoutWrapper devMode>
-      <Home />
+    <LayoutWrapper>
+      {/* <NoSSR> */}
+        <Home />
+      {/* </NoSSR> */}
     </LayoutWrapper>
   )
 }

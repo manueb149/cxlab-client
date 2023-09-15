@@ -1,3 +1,4 @@
+"use client"
 import UnderDevelopment from "@/Components/UnderDevelopment"
 import Footer from "./Footer"
 import Header from "./Header"
