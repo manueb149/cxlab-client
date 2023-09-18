@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Index() {
 
   return (
-    <LayoutWrapper>
+    <LayoutWrapper devMode>
       {/* <NoSSR> */}
         <Home />
       {/* </NoSSR> */}
