@@ -92,9 +92,9 @@ const Solutions = () => {
                 <div className="card bg-white dark:bg-neutral-800 dark:text-white shadow-2xl">
                   <div className="card-body gap-10 min-h-[50vh] flex justify-center items-center">
                     <div className="flex min-h-20 w-auto flex-none items-center justify-center rounded-lg group-hover:bg-gray-50">
-                      <div aria-hidden="true">{<Icon className="w-40 xl:w-80" />}</div>
+                      <div aria-hidden="true">{<Icon className="w-40 xl:w-70" />}</div>
                     </div>
-                    <span className="h-auto text-justify text-sm xl:text-2xl">{description}</span>
+                    <span className="h-auto text-justify text-sm lg:text-lg xl:text-xl 2xl:text-2xl">{description}</span>
                     <div className="know-more text-center text-sm underline hover:cursor-pointer underline-offset-1 xl:text-lg">Know more about {name}</div>
                   </div>
                 </div>
